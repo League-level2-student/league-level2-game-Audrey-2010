@@ -22,6 +22,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	Font testerThree;
 	Font testerFour;
 	Font testerFive;
+	ChurroPanel cpanel;
+	ChurroStand stand;
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -38,6 +40,10 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		    drawDirections(g);
 		}
 		
+	}
+	
+	public void startGame() {
+		stand = new ChurroStand();
 	}
 	
 	ChurroPanel(){

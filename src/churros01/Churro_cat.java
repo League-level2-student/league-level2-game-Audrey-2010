@@ -6,15 +6,18 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class Churro_cat implements ActionListener{
+public class Churro_cat extends ChurroPanel implements ActionListener {
 JFrame frame;
-JButton churroclicker = new JButton();
+
 public static final int WIDTH = 800;
 public static final int HEIGHT = 650;
-ChurroPanel cpanel = new ChurroPanel();
+
+
 
 Churro_cat(){
 	frame = new JFrame();
+	cpanel = new ChurroPanel();
+	
 }
 void setup() {
 	frame.add(cpanel);
@@ -23,7 +26,7 @@ void setup() {
 	frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 	frame.addKeyListener(cpanel);
 	
-	
+	cpanel.add(stand.churroclicker);
 }
 @Override
 public void actionPerformed(ActionEvent e) {
