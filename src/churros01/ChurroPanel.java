@@ -45,7 +45,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void startGame() {
-		stand = new ChurroStand();
+		stand = new ChurroStand(250, 350, 0);
 		cpanel.add(stand.churroclicker);
 	}
 	
@@ -74,31 +74,42 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	
 	
 	void drawIntro(Graphics g) {
+		g.setColor(Color.GREEN);
+		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 		g.setFont(testerOne);
 		g.setColor(Color.BLACK);
 		g.drawString(":)", 100,100);	
+		
 	}
 	
 	void drawChurroStand(Graphics g) {
 		g.setFont(testerTwo);
 		g.setColor(Color.BLACK);
-		g.drawString("text two", 100,100);	
+		g.drawString("text two", 100,100);
+		g.setColor(Color.RED);
+		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	
 	void drawMap(Graphics g){
 		g.setFont(testerThree);
 		g.setColor(Color.BLACK);
 		g.drawString("text three", 100,100);	
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	void drawMarketplace(Graphics g) {
 		g.setFont(testerFour);
 		g.setColor(Color.BLACK);
 		g.drawString("text one", 100,100);	
+		g.setColor(Color.WHITE);
+		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	void drawDirections(Graphics g) {
 		g.setFont(testerFive);
 		g.setColor(Color.BLACK);
 		g.drawString("text five", 100,100);	
+		g.setColor(Color.MAGENTA);
+		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 
 	@Override

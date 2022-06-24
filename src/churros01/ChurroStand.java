@@ -9,28 +9,20 @@ import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-public class ChurroStand implements ActionListener, KeyListener{
-
-int churros = 0;
-int mix = 2;
-int money;
+public class ChurroStand extends ChurroObject implements ActionListener, KeyListener{
 
 
-JButton churroclicker;
 
-ChurroStand(){
-	churroclicker = new JButton();
+JButton churroclicker = new JButton();
+
+ChurroStand(int x, int y, int state){
+	super(x, y, state);
+	
 	churroclicker.addActionListener(this);
 	churroclicker.setText("churro??");
 }
 
-void customers() {
-	
-		money=+6;
-		churros=-1;
-		
-	
-	}
+
 
 
 
@@ -44,10 +36,14 @@ public void actionPerformed(ActionEvent e) {
 	else {
 		churros=churros+1;
 		mix=mix-1;
-		customers();
 		System.out.println("Churros: // "+churros);
 		System.out.println("Mix: // "+mix);
 		
+	}
+	
+	if(churros > 0) {
+		churros = churros-1;
+		money=+6;
 	}
 }
 
