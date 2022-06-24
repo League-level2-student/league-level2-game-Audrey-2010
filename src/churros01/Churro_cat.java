@@ -18,6 +18,8 @@ Churro_cat(){
 	frame = new JFrame();
 	cpanel = new ChurroPanel();
 	
+
+	
 }
 void setup() {
 	frame.add(cpanel);
@@ -26,7 +28,7 @@ void setup() {
 	frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 	frame.addKeyListener(cpanel);
 	
-	cpanel.add(stand.churroclicker);
+
 }
 @Override
 public void actionPerformed(ActionEvent e) {

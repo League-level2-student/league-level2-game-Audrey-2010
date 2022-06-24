@@ -8,30 +8,28 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
 
 public class ChurroStand implements ActionListener, KeyListener{
 
 int churros = 0;
 int mix = 2;
 int money;
-Timer churroshoppers;
-Random ran = new Random();
-JButton churroclicker = new JButton();
+
+
+JButton churroclicker;
 
 ChurroStand(){
+	churroclicker = new JButton();
 	churroclicker.addActionListener(this);
-	
+	churroclicker.setText("churro??");
 }
 
 void customers() {
-	churroshoppers = new Timer(ran.nextInt(6000)/60, this);
-	churroshoppers.start();
-	if(churroshoppers.isRunning()==false) {
+	
 		money=+6;
 		churros=-1;
 		
-	}
+	
 	}
 
 

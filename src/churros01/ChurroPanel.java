@@ -7,7 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
@@ -44,7 +46,9 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	
 	public void startGame() {
 		stand = new ChurroStand();
+		cpanel.add(stand.churroclicker);
 	}
+	
 	
 	ChurroPanel(){
 		testerOne = new Font("Arial", Font.PLAIN, 48);
@@ -72,7 +76,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	void drawIntro(Graphics g) {
 		g.setFont(testerOne);
 		g.setColor(Color.BLACK);
-		g.drawString("text one", 100,100);	
+		g.drawString(":)", 100,100);	
 	}
 	
 	void drawChurroStand(Graphics g) {
@@ -139,4 +143,6 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		}
 	}
 	
+
 }
+
