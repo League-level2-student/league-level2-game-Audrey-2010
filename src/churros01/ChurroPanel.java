@@ -11,6 +11,7 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	final int intro = 0;
@@ -26,6 +27,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	Font testerFive;
 	ChurroPanel cpanel;
 	ChurroStand stand;
+	Timer frameDraw;
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -52,6 +54,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	
 	ChurroPanel(){
 		testerOne = new Font("Arial", Font.PLAIN, 48);
+	    frameDraw = new Timer(1000/60,this);
+	    frameDraw.start();
 	}
 	
 	void updateIntro() {
@@ -83,31 +87,23 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	void drawChurroStand(Graphics g) {
-		g.setFont(testerTwo);
-		g.setColor(Color.BLACK);
-		g.drawString("text two", 100,100);
+		
 		g.setColor(Color.RED);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	
 	void drawMap(Graphics g){
-		g.setFont(testerThree);
-		g.setColor(Color.BLACK);
-		g.drawString("text three", 100,100);	
+			
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	void drawMarketplace(Graphics g) {
-		g.setFont(testerFour);
-		g.setColor(Color.BLACK);
-		g.drawString("text one", 100,100);	
+			
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	void drawDirections(Graphics g) {
-		g.setFont(testerFive);
-		g.setColor(Color.BLACK);
-		g.drawString("text five", 100,100);	
+			
 		g.setColor(Color.MAGENTA);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
@@ -122,12 +118,18 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getKeyCode()==KeyEvent.VK_ENTER) {
-		    if (currentstate == directions) {
-		        currentstate = intro;
-		    } else {
-		        currentstate++;
-		    }
-		}   
+			if (e.getKeyCode()==KeyEvent.VK_ENTER) {
+			    if (currentstate == directions) {
+			        currentstate = intro;
+			    } else {
+			        currentstate++;
+			    }
+			}
+		    System.out.println("ENTER");
+		}
+		if (e.getKeyCode()==KeyEvent.VK_UP) {
+		    System.out.println("UP");
+		}
 	}
 	
 	//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
@@ -152,6 +154,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		}else if(currentstate == directions){
 		    updateDirections();
 		}
+		repaint();
 	}
 	
 
