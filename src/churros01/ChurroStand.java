@@ -29,6 +29,7 @@ ChurroStand(int x, int y, int state){
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
+	System.out.println("CHURRO");
 	if(mix < 1) {
 		JOptionPane.showMessageDialog(null, "uh oh looks like you ran out of enough mix to make a churro :O better go to the market to get more");
 		

@@ -47,8 +47,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void startGame() {
-		stand = new ChurroStand(250, 350, 0);
 		cpanel.add(stand.churroclicker);
+		stand = new ChurroStand(250,350,1);
 	}
 	
 	
@@ -62,7 +62,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		
 	}
 	void updateChurroStand() {
-		
+	
 		
 	}
 	void updateMap() {
@@ -90,6 +90,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		
 		g.setColor(Color.RED);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
+		
+		
 	}
 	
 	void drawMap(Graphics g){
@@ -130,6 +132,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		if (e.getKeyCode()==KeyEvent.VK_UP) {
 		    System.out.println("UP");
 		}
+		
 	}
 	
 	//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
@@ -155,6 +158,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		    updateDirections();
 		}
 		repaint();
+		System.out.println("ACTION");
 	}
 	
 
