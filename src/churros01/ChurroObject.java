@@ -8,6 +8,7 @@ public class ChurroObject {
 	int money = 0;
 	int mix = 2;
 	int churros = 0;
+	String mix2;
 	
 	ChurroObject(int x, int y, int state){
 		this.x=(x);

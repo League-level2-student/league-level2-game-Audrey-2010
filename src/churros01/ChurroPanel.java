@@ -20,11 +20,13 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	final int marketplace = 3;
 	final int directions = 4;
 	int currentstate = 0;
-	Font testerOne;
-	Font testerTwo;
-	Font testerThree;
-	Font testerFour;
-	Font testerFive;
+	Font introooooO;
+	Font directions_to_directions;
+	Font sonobutton;
+	Font directioooooOns;
+	Font directioooooOnspt2;
+	Font directioooooOnspt3;
+	Font counter;
 	ChurroPanel cpanel;
 	ChurroStand stand;
 	Timer frameDraw;
@@ -49,11 +51,18 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	public void startGame() {
 		cpanel.add(stand.churroclicker);
 		stand = new ChurroStand(250,350,1);
+		
 	}
 	
 	
 	ChurroPanel(){
-		testerOne = new Font("Arial", Font.PLAIN, 48);
+		introooooO = new Font("Arial", Font.PLAIN, 48);
+		sonobutton = new Font("Arial", Font.PLAIN, 48);
+		directioooooOns = new Font("Arial", Font.PLAIN, 48);
+		directioooooOnspt2 = new Font("Arial", Font.PLAIN, 48);
+		directioooooOnspt3 = new Font("Arial", Font.PLAIN, 48);
+		directions_to_directions = new Font("Arial", Font.PLAIN, 48);
+		counter = new Font("Arial", Font.PLAIN, 48);
 	    frameDraw = new Timer(1000/60,this);
 	    frameDraw.start();
 	}
@@ -80,9 +89,12 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	void drawIntro(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
-		g.setFont(testerOne);
+		g.setFont(introooooO);
 		g.setColor(Color.BLACK);
-		g.drawString(":)", 100,100);	
+		g.drawString("Churro Cat :)", 100,100);	
+		g.setFont(directions_to_directions);
+		g.setColor(Color.BLACK);
+		g.drawString("press 4 for direction", 100,600);	
 		
 	}
 	
@@ -90,6 +102,9 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		
 		g.setColor(Color.RED);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
+		g.setFont(sonobutton);
+		g.setColor(Color.BLACK);
+		g.drawString("theres supposed to be a button here", 20,100);	
 		
 		
 	}
@@ -108,6 +123,15 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 			
 		g.setColor(Color.MAGENTA);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
+		g.setFont(directioooooOns);
+		g.setColor(Color.BLACK);
+		g.drawString("click on the button to make churros ", 50,100);	
+		g.setFont(directioooooOnspt2);
+		g.setColor(Color.BLACK);
+		g.drawString(":> if you run out of mix go to the ma", 50,200);
+		g.setFont(directioooooOnspt3);
+		g.setColor(Color.BLACK);
+		g.drawString("rket", 0,600);
 	}
 
 	@Override
@@ -132,7 +156,12 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		if (e.getKeyCode()==KeyEvent.VK_UP) {
 		    System.out.println("UP");
 		}
-		
+		if(e.getKeyCode()==KeyEvent.VK_4) {
+			currentstate = directions;
+		}
+		if(e.getKeyCode()==KeyEvent.VK_1) {
+			currentstate = churrostand;
+		}
 	}
 	
 	//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
@@ -159,8 +188,10 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		}
 		repaint();
 		System.out.println("ACTION");
+		
 	}
 	
 
 }
 
+//TODO Auto-generated method stub 185
