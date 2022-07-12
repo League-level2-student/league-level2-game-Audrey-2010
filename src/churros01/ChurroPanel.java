@@ -30,6 +30,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	ChurroPanel cpanel;
 	ChurroStand stand;
 	Timer frameDraw;
+	ChurroStand2 stand2 = new ChurroStand2(250, 700, 1, 50, 50);
+
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -50,7 +52,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	
 	public void startGame() {
 		cpanel.add(stand.churroclicker);
-		stand = new ChurroStand(250,350,1);
+		stand = new ChurroStand(250, 350, 1, 50, 50);
 		
 	}
 	
@@ -100,13 +102,14 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	
 	void drawChurroStand(Graphics g) {
 		
+		g.fillRect(10, 10, 100, 100);
 		g.setColor(Color.RED);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 		g.setFont(sonobutton);
 		g.setColor(Color.BLACK);
 		g.drawString("theres supposed to be a button here", 20,100);	
 		
-		
+		stand2.draw(g);
 	}
 	
 	void drawMap(Graphics g){
@@ -188,6 +191,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		}
 		repaint();
 		System.out.println("ACTION");
+		
+		
 		
 	}
 	

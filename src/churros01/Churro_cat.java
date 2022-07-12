@@ -17,7 +17,7 @@ public static final int HEIGHT = 650;
 Churro_cat(){
 	frame = new JFrame();
 	cpanel = new ChurroPanel();
-	
+
 
 	
 }
@@ -27,7 +27,7 @@ void setup() {
 	frame.setVisible(true);
 	frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 	frame.addKeyListener(cpanel);
-	
+
 
 }
 @Override
