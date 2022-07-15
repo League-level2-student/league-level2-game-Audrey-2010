@@ -3,23 +3,28 @@ package churros01;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
+public class ChurroPanel extends JPanel implements ActionListener, KeyListener, MouseListener{
 	final int intro = 0;
 	final int churrostand = 1;
 	final int map = 2;
 	final int marketplace = 3;
 	final int directions = 4;
 	int currentstate = 0;
+	int slx = 200;
+	int sly = 400;
 	Font introooooO;
 	Font directions_to_directions;
 	Font sonobutton;
@@ -28,9 +33,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	Font directioooooOnspt3;
 	Font counter;
 	ChurroPanel cpanel;
-	ChurroStand stand;
 	Timer frameDraw;
-	ChurroStand2 stand2 = new ChurroStand2(250, 700, 1, 50, 50);
+	ChurroStand2 stand2 = new ChurroStand2(slx, sly, 1, 50, 50);;
 
 	
 	@Override
@@ -51,9 +55,8 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	}
 	
 	public void startGame() {
-		cpanel.add(stand.churroclicker);
-		stand = new ChurroStand(250, 350, 1, 50, 50);
 		
+
 	}
 	
 	
@@ -178,6 +181,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
 		if(currentstate == intro){
 		    updateIntro();
 		}else if(currentstate == churrostand){
@@ -195,6 +199,45 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener{
 		
 		
 	}
+
+	
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 
 }
