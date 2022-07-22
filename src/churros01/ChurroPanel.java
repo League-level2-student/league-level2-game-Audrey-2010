@@ -23,8 +23,6 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	final int marketplace = 3;
 	final int directions = 4;
 	int currentstate = 0;
-	int slx = 200;
-	int sly = 400;
 	Font introooooO;
 	Font directions_to_directions;
 	Font sonobutton;
@@ -34,7 +32,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	Font counter;
 	ChurroPanel cpanel;
 	Timer frameDraw;
-	ChurroStand2 stand2 = new ChurroStand2(slx, sly, 1, 50, 50);;
+	ChurroStand2 stand2 = new ChurroStand2();
 
 	
 	@Override
@@ -112,7 +110,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		g.setColor(Color.BLACK);
 		g.drawString("theres supposed to be a button here", 20,100);	
 		
-		stand2.draw(g);
+	
 	}
 	
 	void drawMap(Graphics g){
@@ -122,7 +120,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	}
 	void drawMarketplace(Graphics g) {
 			
-		g.setColor(Color.WHITE);
+		g.setColor(Color.yellow);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
 	}
 	void drawDirections(Graphics g) {
