@@ -8,19 +8,34 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class ChurroStand2 extends ChurroPanel{
+public class ChurroStand2 extends ChurroObject{
 
-	BufferedImage not;
+	//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
 	
-	ChurroStand2(){
-		try {
-			not = ImageIO.read(getClass().getResource("pixilart-drawing copy.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		stand2.addMouseListener(this);
+	public static BufferedImage not;
+	public static boolean needImage = true;
+	public static boolean gotImage = false;	
+	
+	ChurroStand2(int x, int y, int state, int width, int height){
+		super(x, y, state, width, height);
+		// TODO Auto-generated constructor stub
+	loadImage("pixilart-drawing.png");
+		
 	}
+	
+	void loadImage(String churrofile) {
+		    if (needImage) {
+		        try {
+		            not = ImageIO.read(this.getClass().getResourceAsStream(churrofile));
+			    gotImage = true;
+		        } catch (Exception e) {
+		            
+		        }
+		        needImage = false;
+		    }
+		}
+	
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -29,6 +44,15 @@ public class ChurroStand2 extends ChurroPanel{
 		// 200,425
 	}
 
+	void draw(Graphics g) {
+		if (gotImage) {
+			g.drawImage(not, 250, 250, 50, 50, null);
+		} else {
+			g.setColor(Color.BLUE);
+			g.fillRect(250, 250, 50, 50);
+		}
+	}
+	
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub

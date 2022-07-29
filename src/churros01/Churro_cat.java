@@ -25,7 +25,7 @@ public class Churro_cat extends ChurroPanel implements ActionListener, MouseList
 		cpanel = new ChurroPanel();
 		frame.addMouseListener(this);}
 
-	}
+	
 
 	void setup() {
 		frame.add(cpanel);

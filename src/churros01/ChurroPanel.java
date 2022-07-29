@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 import javax.swing.JButton;
@@ -32,8 +33,11 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	Font counter;
 	ChurroPanel cpanel;
 	Timer frameDraw;
-	ChurroStand2 stand2 = new ChurroStand2();
+	ChurroStand2 exists;
 
+	BufferedImage not;
+	public static boolean needImage = true;
+	public static boolean gotImage = false;
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -54,6 +58,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	
 	public void startGame() {
 		
+		exists = new ChurroStand2();
 
 	}
 	
@@ -110,7 +115,13 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		g.setColor(Color.BLACK);
 		g.drawString("theres supposed to be a button here", 20,100);	
 		
-	
+		if (gotImage) {
+			g.drawImage(not, 250, 250, 50, 50, null);
+		}
+			
+
+		
+		
 	}
 	
 	void drawMap(Graphics g){

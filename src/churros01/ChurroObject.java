@@ -1,5 +1,7 @@
 package churros01;
 
+import java.awt.event.MouseEvent;
+
 public class ChurroObject {
 
 	int x;
@@ -21,6 +23,11 @@ public class ChurroObject {
 	}
 	
 	void update() {
+		
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }
