@@ -14,10 +14,10 @@ public class ChurroObject {
 	int churros = 0;
 	String mix2;
 	
-	ChurroObject(int x, int y, int state, int width, int height){
+	ChurroObject(int x, int y, int width, int height){
 		this.x=(x);
 		this.y=(y);
-		this.state=(state);
+		
 		this.width=(width);
 		this.height=(height);
 	}

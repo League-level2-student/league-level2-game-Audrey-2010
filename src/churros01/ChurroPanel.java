@@ -13,6 +13,7 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -34,8 +35,10 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	ChurroPanel cpanel;
 	Timer frameDraw;
 	ChurroStand2 exists;
+	JButton button;
+	ChurroStand3 version3 = new ChurroStand3(100, 100, 50 , 50);
 
-	BufferedImage not;
+	BufferedImage image;
 	public static boolean needImage = true;
 	public static boolean gotImage = false;
 	
@@ -58,8 +61,9 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	
 	public void startGame() {
 		
-		exists = new ChurroStand2();
-
+		exists = new ChurroStand2(250, 250, 50, 50);
+		
+		
 	}
 	
 	
@@ -70,11 +74,15 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		directioooooOnspt2 = new Font("Arial", Font.PLAIN, 48);
 		directioooooOnspt3 = new Font("Arial", Font.PLAIN, 48);
 		directions_to_directions = new Font("Arial", Font.PLAIN, 48);
+		button = new JButton();
 		counter = new Font("Arial", Font.PLAIN, 48);
 	    frameDraw = new Timer(1000/60,this);
 	    frameDraw.start();
+	    if(needImage) {
+	    	loadImage("pixilart-drawing (1).png");
+	    	
 	}
-	
+	}
 	void updateIntro() {
 		
 	}
@@ -114,12 +122,12 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		g.setFont(sonobutton);
 		g.setColor(Color.BLACK);
 		g.drawString("theres supposed to be a button here", 20,100);	
-		
+		button.setText(":)");
 		if (gotImage) {
-			g.drawImage(not, 250, 250, 50, 50, null);
+			g.drawImage(image, 0, 0, 1, Churro_cat.WIDTH, null);
 		}
 			
-
+		version3.draw(g);
 		
 		
 	}
@@ -249,6 +257,19 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 
 	
 
-}
+
 
 //TODO Auto-generated method stub 185
+
+void loadImage(String imageFile) {
+	if (needImage) {
+		try {
+			image = ImageIO.read(this.getClass().getResourceAsStream(imageFile));
+			gotImage = true;
+		} catch (Exception e) {
+
+		}
+		needImage = false;
+	}
+}
+}
