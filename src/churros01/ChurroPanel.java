@@ -63,8 +63,9 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		
 		exists = new ChurroStand2(250, 250, 50, 50);
 		
+		}
 		
-	}
+	
 	
 	
 	ChurroPanel(){
@@ -79,7 +80,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	    frameDraw = new Timer(1000/60,this);
 	    frameDraw.start();
 	    if(needImage) {
-	    	loadImage("pixilart-drawing (1).png");
+	    	loadImage("pixilart-drawing copy.png");
 	    	
 	}
 	}
@@ -133,9 +134,14 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	}
 	
 	void drawMap(Graphics g){
+		
+		if (gotImage) {
+			g.drawImage(image, 0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT, null);
 			
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
+
+		}
+		else{ g.setColor(Color.BLACK);
+		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT); }
 	}
 	void drawMarketplace(Graphics g) {
 			

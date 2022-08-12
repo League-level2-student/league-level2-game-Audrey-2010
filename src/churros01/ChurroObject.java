@@ -1,6 +1,7 @@
 package churros01;
 
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 public class ChurroObject {
 
@@ -13,6 +14,7 @@ public class ChurroObject {
 	int mix = 2;
 	int churros = 0;
 	String mix2;
+	BufferedImage placeholder;
 	
 	ChurroObject(int x, int y, int width, int height){
 		this.x=(x);
@@ -27,6 +29,11 @@ public class ChurroObject {
 	}
 
 	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void ChurroMouse(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
