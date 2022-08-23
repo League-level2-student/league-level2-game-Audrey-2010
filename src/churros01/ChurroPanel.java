@@ -62,6 +62,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	public void startGame() {
 		
 		exists = new ChurroStand2(250, 250, 50, 50);
+		System.out.println("test");
 		
 		}
 		
@@ -80,7 +81,7 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 	    frameDraw = new Timer(1000/60,this);
 	    frameDraw.start();
 	    if(needImage) {
-	    	loadImage("pixilart-drawing copy.png");
+	    	loadImage("space.png");
 	    	
 	}
 	}
@@ -129,8 +130,15 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		}
 			
 		version3.draw(g);
-		
-		
+		System.out.println("test(cs)");
+	
+		button.setText("hi");
+		if(button.isEnabled()) {
+			System.out.println("enabled");
+		}
+		if(button.isShowing()) {
+			System.out.println("showing");
+		}
 	}
 	
 	void drawMap(Graphics g){
@@ -142,11 +150,13 @@ public class ChurroPanel extends JPanel implements ActionListener, KeyListener, 
 		}
 		else{ g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT); }
+		System.out.println("test(map)");
 	}
 	void drawMarketplace(Graphics g) {
 			
 		g.setColor(Color.yellow);
 		g.fillRect(0, 0, Churro_cat.WIDTH, Churro_cat.HEIGHT);
+		System.out.println("test(marketpla)");
 	}
 	void drawDirections(Graphics g) {
 			

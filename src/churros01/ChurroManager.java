@@ -12,6 +12,11 @@ public class ChurroManager implements MouseListener, ActionListener{
 		this.chur = (chur);
 		
 		}
+	
+	void method() {
+		
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

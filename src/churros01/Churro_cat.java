@@ -33,6 +33,10 @@ public class Churro_cat extends ChurroPanel implements ActionListener, MouseList
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.addKeyListener(cpanel);
+		if(currentstate == churrostand) {
+			cpanel.add(button);
+		}
+		button.show(true);
 
 	}
 

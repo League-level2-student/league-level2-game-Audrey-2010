@@ -3,26 +3,33 @@ package churros01;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 
-public class ChurroStand3 extends ChurroObject implements MouseListener{
+public class ChurroStand3 extends ChurroObject implements MouseListener, ActionListener{
 
 	public static BufferedImage three;
 	public static boolean needimage = true;
 	public static boolean gotimage = false;
+	JButton insert = new JButton();
 	
 	ChurroStand3(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 		if(needimage){
 			loadimage("pixilart-drawing.png");
-
+			
 			
 		}
+		System.out.println("i exist");
+
+		insert.addActionListener(this);
 	}
 	
 		void draw(Graphics g) {
@@ -74,6 +81,12 @@ public class ChurroStand3 extends ChurroObject implements MouseListener{
 		public void mouseReleased(MouseEvent arg0) {
 			// TODO Auto-generated method stub
 			
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("hopefully this prints :')");
 		}
 		
 }
